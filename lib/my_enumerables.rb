@@ -16,6 +16,17 @@ module Enumerable
     end
   end
     
+  def my_select
+    if block_given?
+      new_arr = []
+      for item in self
+        new_arr << item if yield(item)
+      end
+      new_arr
+    else
+      return self
+    end
+  end
 end
 
 # You will first have to define my_each
