@@ -15,4 +15,11 @@ class Array
     end
   end
 
+  def my_map
+    new_arr = []
+    for item in self
+      new_arr << yield(item)
+    end
+    new_arr
+  end
 end
