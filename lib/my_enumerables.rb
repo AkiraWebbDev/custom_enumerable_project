@@ -63,6 +63,13 @@ module Enumerable
     return count
   end
 
+  def my_inject(initial)
+    for item in self
+      initial = yield(initial, item)
+    end
+    return initial
+  end
+
 end
 
 # You will first have to define my_each
