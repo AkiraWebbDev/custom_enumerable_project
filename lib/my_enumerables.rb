@@ -27,6 +27,15 @@ module Enumerable
       return self
     end
   end
+
+  def my_all?
+    self.each do |item|
+      return true unless block_given?
+      result = yield(item)
+      return false unless result
+    end
+    return true
+  end
 end
 
 # You will first have to define my_each
